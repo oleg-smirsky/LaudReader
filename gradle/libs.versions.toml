@@ -15,6 +15,12 @@ lifecycle = "2.7.0"
 activity-compose = "1.8.2"
 coroutines = "1.7.3"
 hilt-navigation-compose = "1.1.0"
+junit = "4.13.2"
+mockk = "1.13.9"
+turbine = "1.0.0"
+room-testing = "2.6.1"
+test-runner = "1.5.2"
+test-core = "1.5.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -47,6 +53,16 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 readability4j = { group = "net.dankito.readability4j", name = "readability4j", version.ref = "readability4j" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "play-services-auth" }
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Test dependencies
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+test-runner = { group = "androidx.test", name = "runner", version.ref = "test-runner" }
+test-core = { group = "androidx.test", name = "core-ktx", version.ref = "test-core" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
