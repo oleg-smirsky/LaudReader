@@ -16,6 +16,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -77,6 +79,21 @@ dependencies {
     implementation(libs.readability4j)
     implementation(libs.play.services.auth)
     implementation(libs.coroutines.android)
+
+    // Unit test dependencies
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.okhttp.mockwebserver)
+
+    // Instrumented test dependencies
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.test.runner)
+    androidTestImplementation(libs.test.core)
+    androidTestImplementation(libs.room.testing)
+    androidTestImplementation(libs.coroutines.test)
+    androidTestImplementation(libs.turbine)
 }
 
 kapt {
