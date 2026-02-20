@@ -3,6 +3,12 @@ name: Auto-merge to master
 on:
   push:
     branches: [ 'claude/**' ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to merge into master'
+        required: true
+        default: 'claude/auto-implement-plan-r9JMM'
 
 jobs:
   merge:
@@ -19,6 +25,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          MERGE_REF="${{ github.event.inputs.branch || github.sha }}"
           git checkout master
-          git merge --ff-only ${{ github.sha }}
+          git merge --ff-only "$MERGE_REF"
           git push origin master
