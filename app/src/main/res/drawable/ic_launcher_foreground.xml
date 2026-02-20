@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple headphones icon for launcher -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,25C41.85,25 32,34.85 32,47v18c0,4.97 4.03,9 9,9h3V50h-6v-3c0,-8.84 7.16,-16 16,-16s16,7.16 16,16v3h-6v24h3c4.97,0 9,-4.03 9,-9V47C76,34.85 66.15,25 54,25z" />
+</vector>
