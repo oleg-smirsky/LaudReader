@@ -26,17 +26,17 @@ interface ArticleDao {
     suspend fun delete(article: Article)
 
     @Query("UPDATE articles SET status = :status WHERE id = :id")
-    suspend fun updateStatus(id: Long, status: ArticleStatus)
+    suspend fun updateStatus(id: Long, status: String)
 
     @Query("UPDATE articles SET generationProgress = :progress WHERE id = :id")
     suspend fun updateGenerationProgress(id: Long, progress: Int)
 
-    @Query("UPDATE articles SET audioFilePath = :path, audioFileSizeBytes = :size, status = :status, durationMs = :durationMs WHERE id = :id")
-    suspend fun updateAudioReady(id: Long, path: String, size: Long, durationMs: Long, status: ArticleStatus = ArticleStatus.READY)
+    @Query("UPDATE articles SET audioFilePath = :path, audioFileSizeBytes = :size, status = 'READY', durationMs = :durationMs WHERE id = :id")
+    suspend fun updateAudioReady(id: Long, path: String, size: Long, durationMs: Long)
 
     @Query("UPDATE articles SET playbackPositionMs = :positionMs, lastPlayedAt = :lastPlayedAt WHERE id = :id")
-    suspend fun updatePlaybackPosition(id: Long, positionMs: Long, lastPlayedAt: Long = System.currentTimeMillis())
+    suspend fun updatePlaybackPosition(id: Long, positionMs: Long, lastPlayedAt: Long)
 
     @Query("SELECT * FROM articles WHERE status = :status LIMIT 1")
-    suspend fun getFirstWithStatus(status: ArticleStatus): Article?
+    suspend fun getFirstWithStatus(status: String): Article?
 }

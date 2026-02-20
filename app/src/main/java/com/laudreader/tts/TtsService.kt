@@ -93,7 +93,7 @@ class TtsService : Service() {
         } catch (e: Exception) {
             // On failure, delete partial file and reset article status
             outputFile.delete()
-            articleDao.updateStatus(articleId, ArticleStatus.GENERATING)
+            articleDao.updateStatus(articleId, ArticleStatus.GENERATING.name)
         }
     }
 

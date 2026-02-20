@@ -57,7 +57,7 @@ class PlaybackService : MediaSessionService() {
                     scope.launch {
                         saveCurrentPosition()
                         if (currentArticleId > 0) {
-                            articleDao.updateStatus(currentArticleId, com.laudreader.data.ArticleStatus.PLAYED)
+                            articleDao.updateStatus(currentArticleId, com.laudreader.data.ArticleStatus.PLAYED.name)
                         }
                     }
                 }
@@ -114,7 +114,8 @@ class PlaybackService : MediaSessionService() {
         scope.launch {
             articleDao.updatePlaybackPosition(
                 id = currentArticleId,
-                positionMs = player.currentPosition
+                positionMs = player.currentPosition,
+                lastPlayedAt = System.currentTimeMillis()
             )
         }
     }
