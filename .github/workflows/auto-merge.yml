@@ -1,0 +1,24 @@
+name: Auto-merge to master
+
+on:
+  push:
+    branches: [ 'claude/**' ]
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge to master
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout master
+          git merge --ff-only ${{ github.sha }}
+          git push origin master
