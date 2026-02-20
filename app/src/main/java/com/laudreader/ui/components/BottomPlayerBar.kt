@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Forward15
+import androidx.compose.material.icons.filled.FastForward
+import androidx.compose.material.icons.filled.FastRewind
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Replay15
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -83,7 +83,7 @@ fun BottomPlayerBar(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     IconButton(onClick = onSeekBack) {
                         Icon(
-                            imageVector = Icons.Filled.Replay15,
+                            imageVector = Icons.Filled.FastRewind,
                             contentDescription = "Skip back 15 seconds",
                             modifier = Modifier.size(24.dp)
                         )
@@ -99,7 +99,7 @@ fun BottomPlayerBar(
 
                     IconButton(onClick = onSeekForward) {
                         Icon(
-                            imageVector = Icons.Filled.Forward15,
+                            imageVector = Icons.Filled.FastForward,
                             contentDescription = "Skip forward 15 seconds",
                             modifier = Modifier.size(24.dp)
                         )

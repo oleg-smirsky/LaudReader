@@ -149,7 +149,7 @@ class MainViewModel @Inject constructor(
         )
 
         viewModelScope.launch {
-            articleDao.updateStatus(article.id, ArticleStatus.PLAYING)
+            articleDao.updateStatus(article.id, ArticleStatus.PLAYING.name)
         }
 
         val intent = Intent(context, PlaybackService::class.java).apply {
@@ -204,14 +204,14 @@ class MainViewModel @Inject constructor(
 
     fun markAsPlayed(article: Article) {
         viewModelScope.launch {
-            articleDao.updateStatus(article.id, ArticleStatus.PLAYED)
+            articleDao.updateStatus(article.id, ArticleStatus.PLAYED.name)
         }
     }
 
     fun markAsUnplayed(article: Article) {
         viewModelScope.launch {
-            articleDao.updateStatus(article.id, ArticleStatus.READY)
-            articleDao.updatePlaybackPosition(article.id, 0)
+            articleDao.updateStatus(article.id, ArticleStatus.READY.name)
+            articleDao.updatePlaybackPosition(article.id, 0, System.currentTimeMillis())
         }
     }
 
